@@ -1,7 +1,7 @@
 {
-  "name": "service-template-node",
-  "version": "0.8.0",
-  "description": "A blueprint for MediaWiki REST API services",
+  "name": "service-scaffold-node",
+  "version": "1.0.0",
+  "description": "A sample project for MediaWiki REST API services",
   "main": "./app.js",
   "scripts": {
     "start": "service-runner",
@@ -15,21 +15,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/wikimedia/service-template-node.git"
+    "url": "git://github.com/wikimedia/service-scaffold-node.git"
   },
   "keywords": [
     "REST",
     "API",
-    "service template",
+    "service scaffold",
     "MediaWiki"
   ],
   "author": "Wikimedia Service Team <services@lists.wikimedia.org>",
   "contributors": [],
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://phabricator.wikimedia.org/tag/service-template-node/"
+    "url": "https://phabricator.wikimedia.org/tag/service-scaffold-node/"
   },
-  "homepage": "https://github.com/wikimedia/service-template-node",
+  "homepage": "https://github.com/wikimedia/service-scaffold-node",
   "dependencies": {
     "bluebird": "^3.5.5",
     "body-parser": "^1.19.0",

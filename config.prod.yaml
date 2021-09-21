@@ -10,12 +10,13 @@ worker_heap_limit_mb: 500
 # Logger info
 logging:
   level: warn
-  # streams:
-  # # Use syslog -> logstash
-  # - type: syslog
-  #   host: localhost
-  #   port: 10514
-  #   prefix: '@cee: '
+#  name: <your app name>
+  streams:
+    - type: syslog
+      host: localhost
+      port: 10514
+      prefix: '@cee: '
+      name: node
 
 # Statsd metrics reporter
 metrics:
@@ -24,7 +25,7 @@ metrics:
   port: 8125
 
 services:
-  - name: service-template-node
+  - name: service-scaffold-node
     # a relative path or the name of an npm package, if different from name
     module: ./app.js
     # optionally, a version constraint of the npm package
@@ -61,7 +62,7 @@ services:
       #   - user-agent
       #   - x-request-id
       # the user agent to use when issuing requests
-      # user_agent: service-template-node
+      # user_agent: service-scaffold-node
       # max JSON POST body size limit
       # max_body_size: 100kb
       # the template used for contacting the MW API
