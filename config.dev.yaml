@@ -10,18 +10,21 @@ worker_heap_limit_mb: 250
 # Logger info
 logging:
   level: trace
-  # streams:
-  # # Use syslog -> logstash
-  # - type: syslog
-  #   host: localhost
-  #   port: 10514
-  #   prefix: '@cee: '
+#  name: <your app name>
+#  streams:
+#    - type: syslog
+#      host: localhost
+#      port: 10514
+#      prefix: '@cee: '
+#      name: node
 
-# Statsd metrics reporter
 metrics:
-  #type: log
-  #host: localhost
-  #port: 8125
+#  - type: prometheus
+#    port: 9000
+# Statsd metrics reporter
+#  - type: statsd
+#    host: localhost
+#    port: 8125
 
 services:
   - name: service-template-node
