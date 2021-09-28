@@ -2,8 +2,8 @@
 
 const BBPromise = require('bluebird');
 const domino = require('domino');
-const sUtil = require('../lib/util');
-const apiUtil = require('../lib/api-util');
+const sUtil = require('servicelib-node/utils/util')
+const apiUtil = require('servicelib-node/utils/api-util');
 
 // shortcut
 const HTTPError = sUtil.HTTPError;
