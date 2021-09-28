@@ -1,6 +1,5 @@
 'use strict';
 
-// const sUtil = require('../lib/util');
 const sUtil = require('servicelib-node/utils/util')
 
 /**
@@ -18,7 +17,6 @@ let app;
  * Gets some basic info about this service
  */
 router.get('/', (req, res) => {
-    console.log(app);
     // simple sync return
     res.json({
         name: app.info.name,
