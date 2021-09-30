@@ -2,6 +2,7 @@
 
 const express = require('express');
 const init = require('servicelib-node/init');
+const packageInfo = require('./package.json');
 
 /**
  * The service's entry point. It takes over the configuration
@@ -13,7 +14,7 @@ const init = require('servicelib-node/init');
  * @return {bluebird} HTTP server
  */
 module.exports = (options) => {
-    return init.initApp(options)
+    return init.initApp(options, packageInfo)
     .then((app) => init.loadRoutes(app, `${__dirname}/routes`))
     .then((app) => {
         // serve static files from static/
