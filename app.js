@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const init = require('servicelib-node/init');
+const init = require('@wikimedia/servicelib-node-init');
 const packageInfo = require('./package.json');
 
 /**

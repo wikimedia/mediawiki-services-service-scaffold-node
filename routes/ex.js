@@ -1,7 +1,7 @@
 'use strict';
 
 const BBPromise = require('bluebird');
-const sUtil = require('servicelib-node/utils/util')
+const sUtil = require('@wikimedia/servicelib-node-utils/util')
 const fs = BBPromise.promisifyAll(require('fs'));
 
 // shortcut

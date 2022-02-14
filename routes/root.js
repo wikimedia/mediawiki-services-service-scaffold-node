@@ -1,7 +1,7 @@
 'use strict';
 
-const sUtil = require('servicelib-node/utils/util')
-const swaggerUi = require('servicelib-node/utils/swagger-ui');
+const sUtil = require('@wikimedia/servicelib-node-utils/util')
+const swaggerUi = require('@wikimedia/servicelib-node-utils/swagger-ui');
 
 /**
  * The main router object
@@ -17,10 +17,10 @@ let app;
  * GET /robots.txt
  * Instructs robots no indexing should occur on this domain.
  */
-router.get('/robots.txt', (req, res) => {
+router.get('/robots.txt', (req, res, next) => {
 
+    next();
     res.type('text/plain').end('User-agent: *\nDisallow: /\n');
-
 });
 
 /**
@@ -29,7 +29,6 @@ router.get('/robots.txt', (req, res) => {
  * parameter is given, otherwise lets the next middleware handle it
  */
 router.get('/', (req, res, next) => {
-
     if ({}.hasOwnProperty.call(req.query || {}, 'spec')) {
         res.json(app.conf.spec);
     } else if ({}.hasOwnProperty.call(req.query || {}, 'doc')) {

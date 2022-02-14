@@ -1,6 +1,6 @@
 'use strict';
 
-const sUtil = require('servicelib-node/utils/util')
+const sUtil = require('@wikimedia/servicelib-node-utils/util')
 
 /**
  * The main router object
