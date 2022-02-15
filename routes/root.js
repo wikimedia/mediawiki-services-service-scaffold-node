@@ -13,14 +13,6 @@ const router = sUtil.router();
  */
 let app;
 
-/**
- * GET /robots.txt
- * Instructs robots no indexing should occur on this domain.
- */
-router.get('/robots.txt', (req, res, next) => {
-    res.type('text/plain').end('User-agent: *\nDisallow: /\n');
-});
-
 module.exports = (appObj) => {
 
     app = appObj;

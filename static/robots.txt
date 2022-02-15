@@ -1,0 +1,8 @@
+#
+# robots.txt, see <https://en.wikipedia.org/wiki/Robots_exclusion_standard>
+# Disallow all indexing per default.
+# You may want to allow indexing of some paths e.g. for documentation.
+#
+
+User-agent: *
+Disallow: /
