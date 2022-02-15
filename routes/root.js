@@ -25,8 +25,9 @@ module.exports = (appObj) => {
 
     app = appObj;
 
-    router.get('/', routes.getSpecRoutHandler( app.conf.spec ) );
-    router.get('/', routes.getSwaggerUiRoutHandler( app ) );
+    router.get('/', routes.getSpecRouteHandler( app.conf.spec ) );
+    router.get('/', routes.getSwaggerUiRouteHandler( app ) );
+    router.get('/healthz', routes.getHealthZRouteHandler( app, () => 'pass' ) );
 
     return {
         path: '/',
