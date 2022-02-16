@@ -1,0 +1,9 @@
+ pipelines:
+  test:
+    blubberfile: blubber.yaml
+    stages: # run API tests
+      - name: test
+  production:
+    blubberfile: blubber.yaml
+    stages:
+      - name: production
