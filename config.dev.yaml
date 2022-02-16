@@ -34,6 +34,7 @@ services:
     # version: ^0.4.0
     # per-service config
     conf:
+      load_examples: true
       port: 6927
       # interface: localhost # uncomment to only listen on localhost
       # more per-service config settings

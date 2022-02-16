@@ -3,19 +3,8 @@
 const sUtil = require('@wikimedia/servicelib-node-utils/util')
 const routes = require('@wikimedia/servicelib-node-utils/routes');
 
-/**
- * The main router object
- */
-const router = sUtil.router();
-
-/**
- * The main application object reported when this module is require()d
- */
-let app;
-
-module.exports = (appObj) => {
-
-    app = appObj;
+module.exports = (app) => {
+    const router = sUtil.router();
 
     router.get('/', routes.getSpecRouteHandler( app.conf.spec ) );
     router.get('/', routes.getSwaggerUiRouteHandler( app ) );
