@@ -15,10 +15,19 @@ const packageInfo = require('./package.json');
  */
 module.exports = (options) => {
     return init.initApp(options, packageInfo)
-    .then((app) => init.loadRoutes(app, `${__dirname}/routes`))
     .then((app) => {
-        // serve static files from static/
-        app.use('/static', express.static(`${__dirname}/static`));
+        // Load dynamic route handlers from the routes directory.
+        init.loadRoutes(app, `${__dirname}/routes`);
+        return app;
+      })
+    .then((app) => {
+        // Define routes for static files.
+        // Per default, we only serve the robots.txt file from static/robots.txt.
+        app.use('/robots.txt', express.static(`${__dirname}/static/robots.txt`));
+
+        // To also server all files from the static directory, use:
+        //   app.use('/static', express.static(`${__dirname}/static`));
+
         return app;
     }).then(init.createServer);
 };
